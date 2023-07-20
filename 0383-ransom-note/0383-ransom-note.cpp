@@ -1,13 +1,13 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char,int> map;
+        int arr[26]={0};
         int i;
         for(i=0;i<magazine.length();i++){
-            map[magazine[i]]++;
+            arr[magazine[i]-97]++;
         }
         for(i=0;i<ransomNote.length();i++){
-            if(map[ransomNote[i]]>0) map[ransomNote[i]]--;
+            if(arr[ransomNote[i]-97]>0) arr[ransomNote[i]-97]--;
             else return false;
         }
         return true;
