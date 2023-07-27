@@ -9,14 +9,8 @@ public:
                 continue;
             i=l+1;j=nums.size()-1;
             while(i<j){
-                int k=nums[l];
-                int sum=nums[i]+nums[j];
-                if(sum+k==0){
-                    vector<int> a;
-                    a.push_back(nums[l]);
-                    a.push_back(nums[i]);
-                    a.push_back(nums[j]);
-                    nums1.push_back(a);
+                if(nums[i]+nums[j]+nums[l]==0){
+                    nums1.push_back({nums[l],nums[i],nums[j]});
                     while (i < j && nums[i] == nums[i + 1])
                         i++;
                     while (i < j && nums[j] == nums[j - 1])
@@ -25,10 +19,10 @@ public:
                     i++;
                     j--;
                 }
-                else if(sum+k<0){ 
+                else if(nums[i]+nums[j]+nums[l]<0){ 
                     i++;
                 }
-                else if(sum+k>0){
+                else if(nums[i]+nums[j]+nums[l]>0){
                     j--;
                 }
             }
