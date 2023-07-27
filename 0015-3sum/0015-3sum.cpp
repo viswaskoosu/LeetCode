@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int>& nums)  {
         vector<vector<int>> nums1;
         sort(nums.begin(),nums.end());
         int i=0,j=nums.size()-1;
@@ -9,9 +9,7 @@ public:
                 continue;
             i=l+1;j=nums.size()-1;
             while(i<j){
-                int k=nums[l];
-                int sum=nums[i]+nums[j];
-                if(sum+k==0){
+                if(nums[i]+nums[j]+nums[l]==0){
                     vector<int> a;
                     a.push_back(nums[l]);
                     a.push_back(nums[i]);
@@ -25,10 +23,10 @@ public:
                     i++;
                     j--;
                 }
-                else if(sum+k<0){ 
+                else if(nums[i]+nums[j]+nums[l]<0){ 
                     i++;
                 }
-                else if(sum+k>0){
+                else if(nums[i]+nums[j]+nums[l]>0){
                     j--;
                 }
             }
