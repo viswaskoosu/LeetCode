@@ -8,14 +8,13 @@ public:
             else if(nums[i]==1) b++;
         }
         for(int i=0;i<a;++i){
-            ans.push_back(0);
+            nums[i]=0;
         }
-        for(int i=0;i<b;++i){
-            ans.push_back(1);
+        for(int i=a;i<b+a;++i){
+            nums[i]=1;
         }
-        for(int i=0;i<size-a-b;++i){
-            ans.push_back(2);
+        for(int i=b+a;i<size;++i){
+            nums[i]=2;
         }
-        nums= ans;
     }
 };
