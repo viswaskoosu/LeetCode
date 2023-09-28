@@ -9,7 +9,7 @@ public:
           return true;
         }
         else if(n%2==0){
-          return isPowerOfTwo(n/2);
+          n/=2;
         }
         else{
           return false;
