@@ -1,8 +1,9 @@
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
+      while(1){
         if(n<1){
-          return false;
+         return false;
         }
         else if(n==1){
           return true;
@@ -13,5 +14,6 @@ public:
         else{
           return false;
         }
+      }
     }
 };
